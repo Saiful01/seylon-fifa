@@ -55,8 +55,8 @@ class Controller extends BaseController
             ->with('news', $news)
             ->with('submit_data', $submit_data)
             ->with("thumbnail", "/images/facebook.png")
-            ->with("fb_title", "টিভি মেলা ২০২২")
-            ->with("fb_sub_title", "বাংলাদেশে টিভির বাজার, দেশি-বিদেশি বিভিন্ন ব্র্যান্ডের টিভির বৈশিষ্ট্য, দরদাম, চলতি অফার এবং টিভি ব্যবহারে বিশেষজ্ঞদের মতামত—এসির আদ্যােপান্ত নিয়ে প্রথম আলাে ডিজিটালের বিশেষ আয়োজন। ");
+            ->with("fb_title", "সিলন ফিফা মোমেন্ট")
+            ->with("fb_sub_title", "সিলন ফিফা মোমেন্ট ");
 
     }
 
