@@ -54,13 +54,78 @@ class Controller extends BaseController
             ->with('photos', $photos)
             ->with('news', $news)
             ->with('submit_data', $submit_data)
-            ->with("thumbnail", "/images/facebook.png")
-            ->with("fb_title", "সিলন ফিফা মোমেন্ট")
-            ->with("fb_sub_title", "সিলন ফিফা মোমেন্ট ");
+            ->with("thumbnail", "/images/banner_2.jpeg")
+            ->with("fb_title", "সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট")
+            ->with("fb_sub_title", " ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’! পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ খেলা দেখার এক্সাইটিং
+                        মোমেন্টের ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন আকর্ষণীয় পুরস্কার। সেই
+                        সঙ্গে মেগা পুরস্কার হিসেবে রয়েছে স্মার্ট টিভি ও স্মার্টফোন জেতার সুযোগ।");
 
     }
 
     public function selfieContestSubmit(Request $request)
+    {
+        $is_submitted = SelfieSubmission::where('phone', $request['phone'])
+            ->whereDate('created_at', Carbon::today())
+            ->first();
+        if (!is_null($is_submitted)) {
+            Alert::error('Sorry', 'আপনার উত্তর আগেই গ্রহণ করা করা হয়েছে।');
+            return back()->withInput();
+        }
+        // return $request->all();
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'image' => 'required|max:10091',
+        ]);
+        if ($validator->errors()->has('image')) {
+
+            Alert::error('Sorry', 'আপনার ফাইল সাইজ  ১০ মেগাবাইট এর বেশি।');
+            return back()->withInput();
+
+
+        }
+        if ($validator->fails()) {
+            Alert::error('Sorry', 'ফর্মের তথ্যগুলি ঠিকমত পূরণ করে সাবমিট করুন।');
+            return back();
+
+        }
+
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/selfie');
+            $image->move($destinationPath, $image_name);
+            $request['selfie'] = '/images/selfie/' . $image_name;
+
+        }
+
+        $data = [
+            'name' => $request['name'],
+            'phone' => $request['phone'],
+            'email' => $request['email'],
+            'selfie' => $request['selfie'],
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+
+        ];
+
+        try {
+            SelfieSubmission::create($data);
+            Alert::success('Congratulations!', 'আপনার সেলফি গ্রহণ করা হয়েছে।');
+            return back();
+
+        } catch (\Exception $exception) {
+            Alert::error('Sorry!', $exception->getMessage());
+            return back()->withInput();
+        }
+
+
+    }
+
+    public function oldselfieContestSubmit(Request $request)
     {
         $is_submitted = SelfieSubmission::where('phone', $request['phone'])
             ->whereDate('created_at', Carbon::today())
@@ -182,12 +247,8 @@ class Controller extends BaseController
 
         $is_validated = validatePhoneNumber($phone);
         if (!$is_validated) {
-            return [
-                'status' => 400,
-                'message' => 'ফোন  নাম্বারটি সঠিক নয়।',
-            ];
-
-
+            Alert::error('Sorry', 'ফোন  নাম্বারটি সঠিক নয়।');
+            return back();
         }
         $is_exist = SelfieVote::where('phone', $phone)->where('selfie_id', $request['selfie_id'])->first();
         if (is_null($is_exist)) {
@@ -197,29 +258,24 @@ class Controller extends BaseController
                 'phone' => $request['phone'],
                 'selfie_id' => $request['selfie_id'],
             ]);
+            Alert::success('Congratulations!', 'আপনার ভোটটি গ্রহণ করা হল।');
+            return back();
 
-
-            return [
-                'status' => 200,
-                'message' => 'আপনার ভোটটি গ্রহণ করা হল। ',
-            ];
 
         } else {
-            return [
-                'status' => 400,
-                'message' => 'আপনি আগেই ভোট দিয়েছেন',
-            ];
-
+            Alert::error('Sorry', 'আপনি আগেই ভোট দিয়েছেন।');
+            return back();
 
         }
 
 
     }
+
     protected function selfieData(Request $request)
     {
         $submit_data = SelfieSubmission::where('is_publish', true)->OrderBy('created_at', "DESC")->get();
-        foreach ($submit_data as $res){
-            $res->votes= SelfieVote::where('selfie_id', $res->id)->count();
+        foreach ($submit_data as $res) {
+            $res->votes = SelfieVote::where('selfie_id', $res->id)->count();
         }
         return [
             'status' => 200,

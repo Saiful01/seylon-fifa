@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>সিলন ফিফা মোমেন্ট</title>
+    <title>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,6 +10,7 @@
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/custom.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpeg">
 
     <meta property="og:image" content="{{ $thumbnail }}"/>
     <meta property="og:image:width" content="600"/>
@@ -127,8 +128,19 @@
             cursor: pointer;
             margin-top: 10px;
             padding: 15px 30px;
-            background-color: #0a83ff;
+            background-color: #FBAE16;
             color: white;
+            border-radius: 5px;
+        }
+
+        .default-btn {
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            padding: 6px 6px;
+            background-color: #FBAE16;
+            color: white;
+            border-radius: 5px;
         }
 
         .badge {
@@ -137,6 +149,43 @@
 
         .who-we-are-content {
             padding: 50px;
+        }
+
+        .navbar-area {
+            background: #fff;
+            border-bottom: 1px solid #f1eded;
+        }
+
+        .reg-btn {
+            padding: 20px;
+        }
+
+        .btn-danger {
+            background-color: #EB242B;
+        }
+
+        .bg-danger {
+            background-color: #EB242B !important;
+        }
+
+        .btn-vote-count {
+            float: left !important;
+        }
+
+        .btn-vote {
+            float: left !important;
+        }
+
+        .navbar-area img {
+            width: 120px;
+
+        }
+
+        @media (max-width: 480px) {
+            .navbar-area img {
+                width: 80px;
+
+            }
         }
     </style>
 
@@ -153,7 +202,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/"> <img src="/images/tv_mela_Logo.png" width="120px" alt=""></a>
+            <a class="navbar-brand" href="/"> <img src="/images/logo.jpeg" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -174,7 +223,7 @@
 
                 </ul>
                 <form class="d-flex">
-                    <button class="btn btn-danger">Registration</button>
+                    <a href="#apply" class="btn btn-danger reg-btn">রেজিস্ট্রেশন</a>
                 </form>
             </div>
         </div>
@@ -182,30 +231,26 @@
 
 </div>
 <section>
-    <div class="container-fluid">
+    <img src="/images/banner_1.jpg" alt="image" width="100%">
 
-
-        <img src="/images/banner.webp" alt="image" width="100%">
-
-
-    </div>
 </section>
-<section class="value-area ptb-100" id="info">
+<section class="value-area ptb-100 bg-light" id="info">
     <div class="container">
         <div class="row align-items-center">
 
 
-            <div class="col-lg-8 col-12 mx-auto text-center">
+            <div class="col-lg-8 col-12 mx-auto">
                 <div class="who-we-are-content">
 
-                    <h3>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</h3>
+                    <h3>খেলা দেখার মুহূর্ত শেয়ার করে জিতুন আকর্ষণীয় পুরস্কার</h3>
                     <p>
                         ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’! পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ খেলা দেখার এক্সাইটিং
                         মোমেন্টের ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন আকর্ষণীয় পুরস্কার। সেই
                         সঙ্গে মেগা পুরস্কার হিসেবে রয়েছে স্মার্ট টিভি ও স্মার্টফোন জেতার সুযোগ।
                     </p>
                     <p>
-                        ছবি বা ভিডিও পাঠানোর জন্য ভিজিট করুন seylonfamilymoment.pro. অথবা মেইল করুন ayojon@prothomalo.com–এ।
+                        ছবি বা ভিডিও পাঠানোর জন্য ভিজিট করুন seylonfamilymoment.pro. অথবা মেইল করুন
+                        ayojon@prothomalo.com–এ।
 
                         ২১ নভেম্বর থেকে ১০ ডিসেম্বর ২০২২ পর্যন্ত প্রতিযোগিতায় অংশগ্রহণের সুযোগ থাকবে।
 
@@ -217,27 +262,59 @@
     </div>
 </section>
 
-<section class="value-area ptb-100 bg-light" id="rules">
+<section class="value-area ptb-100 " id="rules">
     <div class="container">
         <div class="row align-items-center">
 
             <div class="col-lg-8 mx-auto">
                 <div class="who-we-are-content">
 
-                    <span>এই প্রতিযোগিতা কাদের জন্য?</span>
-                    <h3>প্রতিযোগিতায় অংশ নেওয়ার নিয়মগুলো—</h3>
-
+                    <span>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</span>
+                    <h3>খেলা দেখার মুহূর্ত শেয়ার করে জিতুন আকর্ষণীয় পুরস্কার</h3>
+                    <p>বাংলাদেশ দল হয়তো নেই, কিন্তু ফুটবল বিশ্বকাপ আমাদেরও। এই বিশ্বকাপ নিয়ে ঘরে-বাইরে উন্মাদনা। চলছে
+                        পরিবার-স্বজনদের নিয়ে একসাথে ফুটবল ম্যাচ দেখার আয়োজন। সেই উপলক্ষটিকে আরও আনন্দময় করার সুযোগ করে
+                        দিল সিলন ফ্যামিলি ব্লেন্ড চা। পরিবারের সবাইকে নিয়ে খেলা দেখার মুহূর্ত ক্যামেরাবন্দী করে জিতে
+                        নিতে পারেন স্মার্ট টিভি, স্মার্ট ফোনসহ আকর্ষণীয় পুরস্কার। </p>
+                    <p>
+                        খেলা চলাকালীন মোবাইলের ক্যামেরায় জমা হয় অসংখ্য আনন্দময় মুহূর্ত। এবার এসেছে এসব দারুণ মুহূর্তের
+                        ছবি অথবা শর্ট ভিডিও শেয়ার করে পুরস্কার জেতার সুযোগ। বিশ্বকাপ ফুটবল উপলক্ষে প্রথম আলো ডটকম ও সিলন
+                        ফ্যামিলি ব্লেন্ড চা যৌথভাবে আয়োজন করেছে বিশেষ ক্যাম্পেইন ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’।
+                        পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ ফুটবল দেখার উন্মাদনা, উত্তেজনা, আবেগ বা আনন্দময় মুহূর্তটির ছবি
+                        বা শর্ট ভিডিও পাঠাতে পারেন। ক্যাম্পেইন চলাকালীন প্রতিদিনের সেরা ছবি বা ভিডিওর জন্য প্রতিদিনই
+                        থাকবে আকর্ষণীয় উপহার।
+                    </p>
+                    <p>
+                        এ ছাড়াও প্রতিদিনের সেরা ছবি বা ভিডিওগুলোর মধ্যে থেকে পাঠকভোটের মাধ্যমে বিজয়ী তিনজন মেগা পুরস্কার
+                        হিসেবে পাবেন একটি স্মার্ট টিভি এবং দুটি স্মার্ট ফোন।
+                    </p>
+                    <h6>‘সিলন বিশ্বকাপের ফ্যামিলি মোমেন্ট’ প্রতিযোগিতায় অংশগ্রহণের নিয়মাবলী</h6>
                     <ul class="who-we-are-list">
 
+
                         <li>
-                            <span>1</span>
-                            ছবি এই ওয়েবসাইটে আপলোড করতে হবে।
+                            আপনার বন্ধু/পরিবারের সঙ্গে বিশ্বকাপ ফুটবল ম্যাচ উপভোগের মুহূর্তটি (ছবি/ভিডিও) পাঠাতে হবে।
                         </li>
                         <li>
-                            <span>2</span>
-                            অবশ্যই ছবি আপলোড দেওয়ার সময় তোমার নাম, মুঠোফোন নম্বর দিতে হবে।
+                            ছবি/ভিডিওতে অবশ্যই চায়ের কাপ থাকতে হবে।
                         </li>
+                        <li>
+                            ছবি/ভিডিওটি হতে হবে আড়াআড়ি (ল্যান্ডস্কেপ)।
+                        </li>
+                        <li>
+                            ছবি বা ভিডিওর ক্ষেত্রে ফাইল সাইজ হতে হবে সর্বোচ্চ ১০ মেগাবাইট।
+                        </li>
+                        <li>
+                            ভিডিওর ক্ষেত্রে দৈর্ঘ্য হতে হবে সর্বোচ্চ ১০ সেকেণ্ড।
+                        </li>
+                        <li>
+                            ছবি/ভিডিও পাঠানোর সময় অবশ্যই আপনার নাম, ফোন নাম্বার এবং ই–মেইল অ্যাড্রেস দিতে হবে।
+                        </li>
+
+
                     </ul>
+                    <p>ছবি/ভিডিও পাঠানোর জন্য ভিজিট করুন seylonfamilymoment.pro. অথবা মেইল করুন
+                        ayojon@prothomalo.com–এ। </p>
+                    <p>২১ নভেম্বর থেকে ১০ ডিসেম্বর ২০২২ পর্যন্ত প্রতিযোগিতায় অংশগ্রহণের সুযোগ থাকবে। </p>
 
                 </div>
             </div>
@@ -347,10 +424,12 @@
 <section class="quote-area pb-100 apply bg-grey" id="apply">
     <div class="container">
         <div class="row">
-            {{--  <div class="col-lg-6">
-                  <div class="quote-image"></div>
-              </div>--}}
-            <div class="col-lg-6 mx-auto">
+            <div class="col-lg-6">
+
+                <img src="/images/nimonic.jpg" width="100%" height="100%">
+
+            </div>
+            <div class="col-lg-6">
                 <div class="quote-item">
                     <div class="content">
                         <span>অংশগ্রহণ করুন </span>
@@ -359,16 +438,17 @@
                     <form action="/selfie-contest/submit" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" value="" placeholder="নাম" required="">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                   placeholder="নাম" required="">
                         </div>
 
                         <div class="form-group">
                             <input type="text" class="form-control" name="phone"
-                                   placeholder="মুঠোফোন নম্বর" value="" required="">
+                                   placeholder="মুঠোফোন নম্বর" value="{{ old('phone') }}" required="">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="email"
-                                   placeholder="ইমেইল" value="" required="">
+                                   placeholder="ইমেইল" value="{{ old('email') }}" required="">
                         </div>
 
                         {{--     <div class="form-group">
@@ -387,39 +467,49 @@
                              </div>--}}
                         <div class="form-group">
                             <div class="row">
-                                <label>Image</label>
-                                <div class="col-md-5 col-12">
+                                <label>ছবি/ভিডিও</label>
+                                <div class="col-md-12 col-12 mt-2">
+
+                                    <input class="form-control" type="file" name="image" required>
 
 
-                                    {{--  <label for="img" class="btn btn-info"  onclick="clearImage()">এখানে ক্লিক করে ফটো পছন্দ করো</label>--}}
-                                    <input class="form-control" type="file" name="image" id="formFile"
-                                           onchange="preview()">
-                                    {{--   <button onclick="clearImage()" class="btn btn-primary mt-3">Click me</button>--}}
-
-                                </div>
-                                <div class="col-md-7 col-12">
-                                    <img id="frame" src="" class="img-fluid"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <label>Video</label>
-                                <div class="col-md-5 col-12">
+                        {{--      <div class="form-group">
+                                  <div class="row">
+                                      <label>Image</label>
+                                      <div class="col-md-5 col-12">
 
 
+                                          --}}{{--  <label for="img" class="btn btn-info"  onclick="clearImage()">এখানে ক্লিক করে ফটো পছন্দ করো</label>--}}{{--
+                                          <input class="form-control" type="file" name="image" id="formFile"
+                                                 onchange="preview()">
+                                          --}}{{--   <button onclick="clearImage()" class="btn btn-primary mt-3">Click me</button>--}}{{--
 
-                                    <input type='file' name="video_file" id='videoUpload'/>
+                                      </div>
+                                      <div class="col-md-7 col-12">
+                                          <img id="frame" src="" class="img-fluid"/>
+                                      </div>
+                                  </div>
+                              </div>--}}
+                        {{-- <div class="form-group">
+                             <div class="row">
+                                 <label>Video</label>
+                                 <div class="col-md-5 col-12">
 
 
-                                </div>
-                                <div class="col-md-7 col-12">
-                                    <video width="320" height="240" style="display:none" controls autoplay>
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
+                                     <input type='file' name="video_file" id='videoUpload'/>
+
+
+                                 </div>
+                                 <div class="col-md-7 col-12">
+                                     <video width="320" height="240" style="display:none" controls autoplay>
+                                         Your browser does not support the video tag.
+                                     </video>
+                                 </div>
+                             </div>
+                         </div>--}}
 
 
                         <button type="submit" class="default-btn">
@@ -437,7 +527,7 @@
             <div class="col-lg-12">
                 <h2 class="section-title text-center">
                     <li class="nav-item" style="list-style: none">
-                        <a href="#video">ভিডিও</a>
+                        <a href="#video">ছবি/ভিডিও</a>
                     </li>
                 </h2>
                 <div class="elementor-widget-container">
@@ -445,11 +535,33 @@
 
                         <div class="col-lg-4 fadeInUp mt-3 wow fadeInUp" data-wow-duration="1.5s"
                              data-wow-delay="300ms" ng-repeat="item in data_list">
-                            <div class="card p-1" ng-if="item.video">
+                            <div class="card p-1">
                                 <div class="post-header mx-auto">
-
-                                    <div class="embed-responsive embed-responsive-21by9">
-                                        <iframe class="embed-responsive-item" ng-src="@{{ item.video }}" width="100%"
+                                    <div class="mb-2" ng-if="item.selfie.indexOf('png') !== -1">
+                                        <img src="@{{ item.selfie }}" width="100%"
+                                             height="350px">
+                                    </div>
+                                    <div class="mb-2" ng-if="item.selfie.indexOf('jpg') !== -1">
+                                        <img src="@{{ item.selfie }}" width="100%"
+                                             height="350px">
+                                    </div>
+                                    <div class="mb-2" ng-if="item.selfie.indexOf('jpeg') !== -1">
+                                        <img src="@{{ item.selfie }}" width="100%"
+                                             height="350px">
+                                    </div>
+                                    <div class="embed-responsive embed-responsive-21by9"
+                                         ng-if="item.selfie.indexOf('mp4') !== -1">
+                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
+                                                height="350px"></iframe>
+                                    </div>
+                                    <div class="embed-responsive embed-responsive-21by9"
+                                         ng-if="item.selfie.indexOf('MOV') !== -1">
+                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
+                                                height="350px"></iframe>
+                                    </div>
+                                    <div class="embed-responsive embed-responsive-21by9"
+                                         ng-if="item.selfie.indexOf('MKV') !== -1">
+                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
                                                 height="350px"></iframe>
                                     </div>
 
@@ -458,9 +570,9 @@
                                 <div class="post-body mx-auto">
                                     <div class="post-meta">
                                         <div class="row">
-                                            <div class="col-md-8">
+                                            <div class="col-md-8 col-8">
                                                 <!-- Button to Open the Modal -->
-                                                <button type="button" class="btn btn-primary"
+                                                <button class="default-btn btn-vote"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#myModal@{{ item.id }}">
                                                     ভোট দিন
@@ -483,18 +595,17 @@
 
                                                                                 <h3>আপনার ভোট দিন ।</h3>
                                                                             </div>
-                                                                            <form action="/vote"
-                                                                                  method="post">
+                                                                            <form action="/vote" method="post">
                                                                                 @csrf
+
                                                                                 <input type="hidden"
                                                                                        name="selfie_id"
                                                                                        ng-value="@{{ item.id }}">
                                                                                 <div class="form-group">
                                                                                     <input type="text"
                                                                                            class="form-control"
-                                                                                           name="name" value=""
-                                                                                           placeholder="নাম"
-                                                                                           required="">
+                                                                                           name="name"
+                                                                                           placeholder="নাম" required>
                                                                                 </div>
 
                                                                                 <div class="form-group">
@@ -502,15 +613,15 @@
                                                                                            class="form-control"
                                                                                            name="phone"
                                                                                            placeholder="মুঠোফোন নম্বর"
-                                                                                           value="" required="">
+                                                                                           required>
                                                                                 </div>
 
                                                                                 <button type="submit"
-                                                                                        ng-click="voteSubmit()"
                                                                                         class="default-btn">
                                                                                     পাঠিয়ে দিন
                                                                                 </button>
                                                                             </form>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -528,8 +639,9 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-4">
-                                                <span class="badge bg-success">ভোট : @{{ item.votes }}</span>
+                                            <div class="col-md-4 col-4">
+                                                <span
+                                                    class="badge bg-danger btn-vote-count">ভোট : @{{ item.votes }}</span>
                                             </div>
 
 
@@ -541,98 +653,6 @@
                                 </div>
                                 <!-- post-body end -->
                             </div>
-                            <div class="card p-1" ng-if="item.selfie">
-                                <div class="post-header mx-auto">
-
-                                    <img src="@{{ item.selfie }}" width="100%" height="350px">
-
-
-                                </div>
-                                <div class="post-body mx-auto">
-                                    <div class="post-meta">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <!-- Button to Open the Modal -->
-                                                <button type="button" class="btn btn-primary"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#myModal@{{ item.id }}">
-                                                    ভোট দিন
-                                                </button>
-
-                                                <!-- The Modal -->
-                                                <div class="modal" id="myModal@{{ item.id }}">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-
-                                                            <!-- Modal body -->
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    {{--  <div class="col-lg-6">
-                                                                          <div class="quote-image"></div>
-                                                                      </div>--}}
-                                                                    <div class="col-lg-12 mx-auto">
-                                                                        <div class="quote-item">
-                                                                            <div class="content">
-
-                                                                                <h3>আপনার ভোট দিন।</h3>
-                                                                            </div>
-                                                                            <form action="/vote"
-                                                                                  method="post">
-                                                                                @csrf
-                                                                                <input type="hidden"
-                                                                                       name="selfie_id"
-                                                                                       value="@{{ item.id }}">
-                                                                                <div class="form-group">
-                                                                                    <input type="text"
-                                                                                           class="form-control"
-                                                                                           name="name" value=""
-                                                                                           placeholder="নাম"
-                                                                                           required="">
-                                                                                </div>
-
-                                                                                <div class="form-group">
-                                                                                    <input type="text"
-                                                                                           class="form-control"
-                                                                                           name="phone"
-                                                                                           placeholder="মুঠোফোন নম্বর"
-                                                                                           value="" required="">
-                                                                                </div>
-
-                                                                                <button type="submit"
-                                                                                        class="default-btn">
-                                                                                    পাঠিয়ে দিন
-                                                                                </button>
-                                                                            </form>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Modal footer -->
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger"
-                                                                        data-bs-dismiss="modal">Close
-                                                                </button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <span class="badge bg-success">ভোট : @{{ item.votes }}</span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <!-- post-body end -->
-                                <!-- post-body end -->
-                            </div>
-                            <!-- post end-->
                         </div>
 
 
@@ -915,6 +935,10 @@
                 })
         };
         $scope.voteSubmit = function () {
+            console.log('ok')
+            console.log($scope.name)
+            console.log($scope.phone)
+            return
 
             if ($scope.name == null || $scope.phone == null) {
                 Swal.fire({
@@ -924,10 +948,12 @@
                 return;
             }
 
+
             let url = "/vote";
             let params = {
                 'name': $scope.name,
                 'phone': $scope.phone,
+                'selfie_id': $scope.selfie_id,
             };
             $http.post(url, params).then(function success(response) {
                 return "ok";
