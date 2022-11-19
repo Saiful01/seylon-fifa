@@ -433,7 +433,7 @@
                 <div class="quote-item">
                     <div class="content">
                         <span>অংশগ্রহণ করুন </span>
-                        <h3>নিচের ফর্মে আপনার তথ্য দিয়ে ছবি অথবা ভিডিও আপলোড করুন।</h3>
+                        <h3>নিচের ফরমে আপনার তথ্য দিয়ে ছবি অথবা ভিডিও আপলোড করুন।</h3>
                     </div>
                     <form action="/selfie-contest/submit" method="post" enctype="multipart/form-data">
                         @csrf
