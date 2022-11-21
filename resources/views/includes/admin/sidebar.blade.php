@@ -48,12 +48,12 @@
 
 
 
-                {{--<li>
-                    <a href="/admin/settings" class=" waves-effect">
+                <li>
+                    <a href="/admin/selfie-submission" class=" waves-effect">
                         <i class="ri-tools-fill"></i>
-                        <span>Setting</span>
+                        <span>Images/video Submission</span>
                     </a>
-                </li>--}}
+                </li>
 
 
                 {{-- <li>

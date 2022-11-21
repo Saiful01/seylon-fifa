@@ -130,20 +130,34 @@
 
                                 </td>
 
-                                <td><img src="{{$res->selfie}}" width="100px" data-toggle="modal"
-                                         data-target="#modelId{{$res->id}}" style="cursor: pointer;"/>
+                                <td>
+                                    @if(strstr($res->selfie, "mp4"))
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe class="embed-responsive-item" src="{{$res->selfie}}" width="100%"
+                                                    ></iframe>
+                                        </div>
+                                    @elseif(strstr($res->selfie, "png"))
+                                        <img src="{{$res->selfie}}" width="100px" data-toggle="modal"
+                                             data-target="#modelId{{$res->id}}" style="cursor: pointer;"/>
+                                    @elseif(strstr($res->selfie, "jpg"))
+                                        <img src="{{$res->selfie}}" width="100px" data-toggle="modal"
+                                             data-target="#modelId{{$res->id}}" style="cursor: pointer;"/>
+                                    @endif
 
-                                <a href="/admin/selfie-submission/details/{{$res->id}}">Details</a>
+
+
+
+                                   {{-- <a href="/admin/selfie-submission/details/{{$res->id}}">Details</a>--}}
                                 </td>
 
 
                                 <!-- Button trigger modal -->
-                            {{--   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                                       data-target="#modelId{{$res->id}}">
-                                   Launch
-                               </button>--}}
+                                {{--   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                           data-target="#modelId{{$res->id}}">
+                                       Launch
+                                   </button>--}}
 
-                            <!-- Modal -->
+                                <!-- Modal -->
                                 <div class="modal fade" id="modelId{{$res->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="modelTitleId" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
@@ -168,13 +182,12 @@
 
                             </tr>
                         @endforeach
-                     {{--   {{ $results->appends(Request::except('page'))->links("pagination::bootstrap-4") }}--}}
+                        {{--   {{ $results->appends(Request::except('page'))->links("pagination::bootstrap-4") }}--}}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-
 
 @endsection

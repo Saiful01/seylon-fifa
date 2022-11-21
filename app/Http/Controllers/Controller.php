@@ -54,7 +54,7 @@ class Controller extends BaseController
             ->with('photos', $photos)
             ->with('news', $news)
             ->with('submit_data', $submit_data)
-            ->with("thumbnail", "/images/banner_2.jpeg")
+            ->with("thumbnail", "/images/banner_2.jpg")
             ->with("fb_title", "সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট")
             ->with("fb_sub_title", " ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’! পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ খেলা দেখার এক্সাইটিং
                         মোমেন্টের ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন আকর্ষণীয় পুরস্কার। সেই

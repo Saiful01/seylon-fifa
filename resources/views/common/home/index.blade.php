@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</title>
     <meta charset="utf-8">
@@ -168,6 +168,16 @@
             background-color: #EB242B !important;
         }
 
+        .primary-color {
+            color: #EB242B !important;
+            font-weight: bold;
+        }
+
+        span {
+            color: #FBAE16 !important;
+            font-weight: bold;
+        }
+
         .btn-vote-count {
             float: left !important;
         }
@@ -189,7 +199,19 @@
         }
     </style>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP4T0XYRL9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-KP4T0XYRL9');
+    </script>
 </head>
 <body ng-app="myApp" ng-controller="myController" ng-init="allSelfieData()">
 @include('sweetalert::alert')
@@ -198,9 +220,9 @@
     <img id="loading-image" src="/images/loader.gif" alt="Loading..."/>
 </div>
 
-<div class="navbar-area">
+<div class="navbar-area sticky-top ">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container">
             <a class="navbar-brand" href="/"> <img src="/images/logo.jpeg" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -214,16 +236,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">হোম </a>
                     </li>
+                    {{-- <li class="nav-item">
+                         <a class="nav-link" href="#news">খবর </a>
+                     </li>--}}
                     <li class="nav-item">
-                        <a class="nav-link" href="#news">খবর </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#video">ভিডিও </a>
+                        <a class="nav-link" href="#video">ছবি/ভিডিও</a>
                     </li>
 
                 </ul>
                 <form class="d-flex">
-                    <a href="#apply" class="btn btn-danger reg-btn">রেজিস্ট্রেশন</a>
+                    <a href="#apply" class="btn btn-danger reg-btn">অংশগ্রহন করুন</a>
                 </form>
             </div>
         </div>
@@ -231,7 +253,7 @@
 
 </div>
 <section>
-    <img src="/images/banner_1.jpg" alt="image" width="100%">
+    <img src="/images/slider.jpg" alt="image" width="100%">
 
 </section>
 <section class="value-area ptb-100 bg-light" id="info">
@@ -239,55 +261,64 @@
         <div class="row align-items-center">
 
 
-            <div class="col-lg-8 col-12 mx-auto">
+            <div class="col-lg-6 col-12 mx-auto">
                 <div class="who-we-are-content">
 
-                    <h3>খেলা দেখার মুহূর্ত শেয়ার করে জিতুন আকর্ষণীয় পুরস্কার</h3>
+                    <h3 class="primary-color text-center">খেলা দেখার মুহূর্ত শেয়ার করে জিতুন আকর্ষণীয় পুরস্কার</h3>
                     <p>
-                        ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’! পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ খেলা দেখার এক্সাইটিং
-                        মোমেন্টের ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন আকর্ষণীয় পুরস্কার। সেই
-                        সঙ্গে মেগা পুরস্কার হিসেবে রয়েছে স্মার্ট টিভি ও স্মার্টফোন জেতার সুযোগ।
+                        বাংলাদেশ দল হয়তো নেই কিন্তু ফুটবল বিশ্বকাপ আমাদেরও! বিশ্বকাপ নিয়ে ঘরে-বাইরে চলছে উন্মাদনা। চলছে
+                        বন্ধু ও পরিবারের সদস্যদের নিয়ে একসঙ্গে ফুটবল ম্যাচ দেখার আয়োজন। খেলা চলাকালীন মোবাইলের ক্যামেরায়
+                        জমা হয় অসংখ্য আনন্দময় মুহূর্ত। এবার এসেছে সেসব দারুণ মুহূর্তের ছবি বা শর্ট ভিডিও শেয়ার করে
+                        স্মার্ট টিভি, স্মার্ট ফোনসহ অসংখ্য পুরস্কার জেতার সুযোগ।
                     </p>
                     <p>
-                        ছবি বা ভিডিও পাঠানোর জন্য ভিজিট করুন seylonfamilymoment.pro. অথবা মেইল করুন
-                        ayojon@prothomalo.com–এ।
-
-                        ২১ নভেম্বর থেকে ১০ ডিসেম্বর ২০২২ পর্যন্ত প্রতিযোগিতায় অংশগ্রহণের সুযোগ থাকবে।
-
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="value-area ptb-100 " id="rules">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-8 mx-auto">
-                <div class="who-we-are-content">
-
-                    <span>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</span>
-                    <h3>খেলা দেখার মুহূর্ত শেয়ার করে জিতুন আকর্ষণীয় পুরস্কার</h3>
-                    <p>বাংলাদেশ দল হয়তো নেই, কিন্তু ফুটবল বিশ্বকাপ আমাদেরও। এই বিশ্বকাপ নিয়ে ঘরে-বাইরে উন্মাদনা। চলছে
-                        পরিবার-স্বজনদের নিয়ে একসাথে ফুটবল ম্যাচ দেখার আয়োজন। সেই উপলক্ষটিকে আরও আনন্দময় করার সুযোগ করে
-                        দিল সিলন ফ্যামিলি ব্লেন্ড চা। পরিবারের সবাইকে নিয়ে খেলা দেখার মুহূর্ত ক্যামেরাবন্দী করে জিতে
-                        নিতে পারেন স্মার্ট টিভি, স্মার্ট ফোনসহ আকর্ষণীয় পুরস্কার। </p>
-                    <p>
-                        খেলা চলাকালীন মোবাইলের ক্যামেরায় জমা হয় অসংখ্য আনন্দময় মুহূর্ত। এবার এসেছে এসব দারুণ মুহূর্তের
-                        ছবি অথবা শর্ট ভিডিও শেয়ার করে পুরস্কার জেতার সুযোগ। বিশ্বকাপ ফুটবল উপলক্ষে প্রথম আলো ডটকম ও সিলন
-                        ফ্যামিলি ব্লেন্ড চা যৌথভাবে আয়োজন করেছে বিশেষ ক্যাম্পেইন ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’।
+                        বিশ্বকাপ ফুটবল উপলক্ষে প্রথম আলো ডটকম ও সিলন ফ্যামিলি ব্লেন্ড চা যৌথভাবে আয়োজন করেছে বিশেষ
+                        ক্যাম্পেইন ‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’।
                         পরিবার বা বন্ধুদের সঙ্গে বিশ্বকাপ ফুটবল দেখার উন্মাদনা, উত্তেজনা, আবেগ বা আনন্দময় মুহূর্তটির ছবি
-                        বা শর্ট ভিডিও পাঠাতে পারেন। ক্যাম্পেইন চলাকালীন প্রতিদিনের সেরা ছবি বা ভিডিওর জন্য প্রতিদিনই
-                        থাকবে আকর্ষণীয় উপহার।
+                        বা শর্ট ভিডিও পাঠান। ক্যাম্পেইন চলাকালীন প্রতিদিনের সেরা ছবি বা ভিডিওর জন্য থাকবে আকর্ষণীয়
+                        উপহার।
+
                     </p>
                     <p>
                         এ ছাড়াও প্রতিদিনের সেরা ছবি বা ভিডিওগুলোর মধ্যে থেকে পাঠকভোটের মাধ্যমে বিজয়ী তিনজন মেগা পুরস্কার
                         হিসেবে পাবেন একটি স্মার্ট টিভি এবং দুটি স্মার্ট ফোন।
                     </p>
-                    <h6>‘সিলন বিশ্বকাপের ফ্যামিলি মোমেন্ট’ প্রতিযোগিতায় অংশগ্রহণের নিয়মাবলী</h6>
+                </div>
+
+
+            </div>
+            <div class="col-lg-6 col-12 mx-auto">
+                <div class="who-we-are-content">
+                    {{--<video controls class="w-100">
+
+                        <source src="/images/video.mp4"
+                                type="video/mp4">
+                    </video>--}}
+
+                    <video  class="w-100" >
+                        <source src="/images/video.mp4" type="video/mp4" />
+                    </video>
+
+                   {{-- <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="/images/video.mp4" width="100%"
+                                height="350px"></iframe>
+                    </div>--}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="value-area ptb-100 " id="apply">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 ">
+                <div class="who-we-are-content">
+
+                    {{--  <span>সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট</span>--}}
+                    <h3 class="primary-color">‘সিলন বিশ্বকাপ ফ্যামিলি মোমেন্ট’ প্রতিযোগিতায় অংশগ্রহণের নিয়ম</h3>
                     <ul class="who-we-are-list">
 
 
@@ -312,128 +343,17 @@
 
 
                     </ul>
-                    <p>ছবি/ভিডিও পাঠানোর জন্য ভিজিট করুন seylonfamilymoment.pro. অথবা মেইল করুন
-                        ayojon@prothomalo.com–এ। </p>
-                    <p>২১ নভেম্বর থেকে ১০ ডিসেম্বর ২০২২ পর্যন্ত প্রতিযোগিতায় অংশগ্রহণের সুযোগ থাকবে। </p>
+                    <p>ছবি/ভিডিও পাঠানোর জন্য ভিজিট করুন <span>seylonfamilymoment.pro.</span> অথবা মেইল করুন
+                        <span>ayojon@prothomalo.com</span>–এ।</p>
+                    <p>প্রতিযোগিতায় অংশগ্রহণের সুযোগ থাকবে ২১ নভেম্বর থেকে ১০ ডিসেম্বর ২০২২ পর্যন্ত </p>
 
                 </div>
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-
-{{--<div class="hero-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="/images/numonic.png" style=" width: 80%"/>
-            </div>
-            <div class="col-md-6">
-
-                <h1>সিলন ফিফা মোমেন্ট</h1>
-
-                <p>বিশ্বকাপের মাসজুড়ে ‘সিলন ফিফা মোমেন্ট’-এ ফ্রেন্ডস বা ফ্যামিলির সাথে খেলা দেখার এক্সাইটিং মোমেন্টের
-                    ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন টিভি, মোবাইলসহ অসংখ্য পুরস্কার।</p>
-            </div>
-        </div>
-    </div>
-</div>--}}
-
-<!-- Carousel Slider -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel" data-interval="500">
-
-    <div class="container">
-
-        <!-- Indicators/dots -->
-        {{--<div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>--}}
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-
-            @if(count($sliders)>0)
-                <div class="carousel-item active">
-                    <img src="{{$sliders[0]->featured_image}}" alt="Los Angeles" class="d-block w-100">
-                </div>
-            @endif
-            @foreach($sliders as $slider)
-                <div class="carousel-item">
-                    <img src="{{$slider->featured_image}}" alt="Los Angeles" class="d-block w-100">
-                </div>
-            @endforeach
-
-            {{--<div class="carousel-item">
-                <img src="ny.jpg" alt="New York" class="d-block w-100">
-            </div>--}}
-        </div>
-
-        <!-- Left and right controls/icons -->
-        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-             <span class="carousel-control-prev-icon"></span>
-         </button>
-         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-             <span class="carousel-control-next-icon"></span>
-         </button>--}}
-    </div>
-</div>
-
-
-<section class="ts-contact " style="background-color: #f1f1f1;">
-    <div class="container">
-        <div class="row mb-25">
-            <div class="col-lg-12">
-                <div class="elementor-widget-container">
-                    <div class="row ">
-                        @foreach($photos as $res)
-
-                            <div class="col-lg-2 col-6 fadeInUp mt-4 wow fadeInUp" data-wow-duration="1.5s"
-                                 data-wow-delay="300ms">
-                                <div class="card p-2" style="border: 1px solid; border-color: #9f9f9f">
-                                    <a href="{{$res->url}}" target="_blank">
-                                        <div class="post-header mx-auto">
-                                            <img src="{{$res->featured_image}}"
-                                                 class="img-responsive mb-2" width="100%"
-                                                 alt="--">
-
-                                        </div>
-                                    </a>
-
-
-                                    <!-- post-body end -->
-                                </div>
-                                <!-- post end-->
-                            </div>
-                        @endforeach
-
-                    </div> <!-- row end -->
-                </div>
-            </div><!-- col end-->
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="quote-area pb-100 apply bg-grey" id="apply">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-
-                <img src="/images/nimonic.jpg" width="100%" height="100%">
-
             </div>
             <div class="col-lg-6">
                 <div class="quote-item">
                     <div class="content">
                         <span>অংশগ্রহণ করুন </span>
-                        <h3>নিচের ফরমে আপনার তথ্য দিয়ে ছবি অথবা ভিডিও আপলোড করুন।</h3>
+                        <h3 class="primary-color">নিচের ফরমে আপনার তথ্য দিয়ে ছবি অথবা ভিডিও আপলোড করুন।</h3>
                     </div>
                     <form action="/selfie-contest/submit" method="post" enctype="multipart/form-data">
                         @csrf
@@ -518,8 +438,10 @@
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
+
 </section>
 <section class="ts-contact" style="background-color: #f8f8f8;" id="video">
     <div class="container">
@@ -567,90 +489,89 @@
 
 
                                 </div>
-                                <div class="post-body mx-auto">
-                                    <div class="post-meta">
-                                        <div class="row">
-                                            <div class="col-md-8 col-8">
-                                                <!-- Button to Open the Modal -->
-                                                <button class="default-btn btn-vote"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#myModal@{{ item.id }}">
-                                                    ভোট দিন
-                                                </button>
+                                {{-- <div class="post-body mx-auto">
+                                     <div class="post-meta">
+                                         <div class="row">
+                                             <div class="col-md-8 col-8">
+                                                 <!-- Button to Open the Modal -->
+                                                 <button class="default-btn btn-vote"
+                                                         data-bs-toggle="modal"
+                                                         data-bs-target="#myModal@{{ item.id }}">
+                                                     ভোট দিন
+                                                 </button>
 
-                                                <!-- The Modal -->
-                                                <div class="modal" id="myModal@{{ item.id }}">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
+                                                 <!-- The Modal -->
+                                                 <div class="modal" id="myModal@{{ item.id }}">
+                                                     <div class="modal-dialog">
+                                                         <div class="modal-content">
 
-                                                            <!-- Modal body -->
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    {{--  <div class="col-lg-6">
-                                                                          <div class="quote-image"></div>
-                                                                      </div>--}}
-                                                                    <div class="col-lg-12 mx-auto">
-                                                                        <div class="quote-item">
-                                                                            <div class="content">
+                                                             <!-- Modal body -->
+                                                             <div class="modal-body">
+                                                                 <div class="row">
+                                                                     --}}{{--  <div class="col-lg-6">
+                                                                           <div class="quote-image"></div>
+                                                                       </div>--}}{{--
+                                                                     <div class="col-lg-12 mx-auto">
+                                                                         <div class="quote-item">
+                                                                             <div class="content">
 
-                                                                                <h3>আপনার ভোট দিন ।</h3>
-                                                                            </div>
-                                                                            <form action="/vote" method="post">
-                                                                                @csrf
+                                                                                 <h3>আপনার ভোট দিন ।</h3>
+                                                                             </div>
+                                                                             <form action="/vote" method="post">
+                                                                                 @csrf
 
-                                                                                <input type="hidden"
-                                                                                       name="selfie_id"
-                                                                                       ng-value="@{{ item.id }}">
-                                                                                <div class="form-group">
-                                                                                    <input type="text"
-                                                                                           class="form-control"
-                                                                                           name="name"
-                                                                                           placeholder="নাম" required>
-                                                                                </div>
+                                                                                 <input type="hidden"
+                                                                                        name="selfie_id"
+                                                                                        ng-value="@{{ item.id }}">
+                                                                                 <div class="form-group">
+                                                                                     <input type="text"
+                                                                                            class="form-control"
+                                                                                            name="name"
+                                                                                            placeholder="নাম" required>
+                                                                                 </div>
 
-                                                                                <div class="form-group">
-                                                                                    <input type="text"
-                                                                                           class="form-control"
-                                                                                           name="phone"
-                                                                                           placeholder="মুঠোফোন নম্বর"
-                                                                                           required>
-                                                                                </div>
+                                                                                 <div class="form-group">
+                                                                                     <input type="text"
+                                                                                            class="form-control"
+                                                                                            name="phone"
+                                                                                            placeholder="মুঠোফোন নম্বর"
+                                                                                            required>
+                                                                                 </div>
 
-                                                                                <button type="submit"
-                                                                                        class="default-btn">
-                                                                                    পাঠিয়ে দিন
-                                                                                </button>
-                                                                            </form>
+                                                                                 <button type="submit"
+                                                                                         class="default-btn">
+                                                                                     পাঠিয়ে দিন
+                                                                                 </button>
+                                                                             </form>
 
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
 
-                                                            <!-- Modal footer -->
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger"
-                                                                        data-bs-dismiss="modal">Close
-                                                                </button>
-                                                            </div>
+                                                             <!-- Modal footer -->
+                                                             <div class="modal-footer">
+                                                                 <button type="button" class="btn btn-danger"
+                                                                         data-bs-dismiss="modal">Close
+                                                                 </button>
+                                                             </div>
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
 
-                                            <div class="col-md-4 col-4">
-                                                <span
-                                                    class="badge bg-danger btn-vote-count">ভোট : @{{ item.votes }}</span>
-                                            </div>
-
-
-                                        </div>
+                                             <div class="col-md-4 col-4">
+                                                 <span class="badge bg-danger btn-vote-count text-white">ভোট : @{{ item.votes }}</span>
+                                             </div>
 
 
-                                    </div>
+                                         </div>
 
-                                </div>
+
+                                     </div>
+
+                                 </div>--}}
                                 <!-- post-body end -->
                             </div>
                         </div>
@@ -666,6 +587,107 @@
     </div>
 
 </section>
+
+
+{{--<div class="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/numonic.png" style=" width: 80%"/>
+            </div>
+            <div class="col-md-6">
+
+                <h1>সিলন ফিফা মোমেন্ট</h1>
+
+                <p>বিশ্বকাপের মাসজুড়ে ‘সিলন ফিফা মোমেন্ট’-এ ফ্রেন্ডস বা ফ্যামিলির সাথে খেলা দেখার এক্সাইটিং মোমেন্টের
+                    ছবি বা সর্বোচ্চ ১০ সেকেন্ডের ভিডিও শেয়ার করে প্রতিদিন জিতে নিন টিভি, মোবাইলসহ অসংখ্য পুরস্কার।</p>
+            </div>
+        </div>
+    </div>
+</div>--}}
+
+<!-- Carousel Slider -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel" data-interval="500">
+
+    <div class="container">
+
+        <!-- Indicators/dots -->
+        {{--<div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>--}}
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+
+            @if(count($sliders)>0)
+                <div class="carousel-item active">
+                    <img src="{{$sliders[0]->featured_image}}" alt="Los Angeles" class="d-block w-100">
+                </div>
+            @endif
+            @foreach($sliders as $slider)
+                <div class="carousel-item">
+                    <img src="{{$slider->featured_image}}" alt="Los Angeles" class="d-block w-100">
+                </div>
+            @endforeach
+
+            {{--<div class="carousel-item">
+                <img src="ny.jpg" alt="New York" class="d-block w-100">
+            </div>--}}
+        </div>
+
+        <!-- Left and right controls/icons -->
+        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+             <span class="carousel-control-prev-icon"></span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+             <span class="carousel-control-next-icon"></span>
+         </button>--}}
+    </div>
+</div>
+
+@if(count($photos)>0)
+
+    <section class="ts-contact " style="background-color: #f1f1f1;">
+        <div class="container">
+            <div class="row mb-25">
+                <div class="col-lg-12">
+                    <div class="elementor-widget-container">
+                        <div class="row ">
+                            @foreach($photos as $res)
+
+                                <div class="col-lg-2 col-6 fadeInUp mt-4 wow fadeInUp" data-wow-duration="1.5s"
+                                     data-wow-delay="300ms">
+                                    <div class="card p-2" style="border: 1px solid; border-color: #9f9f9f">
+                                        <a href="{{$res->url}}" target="_blank">
+                                            <div class="post-header mx-auto">
+                                                <img src="{{$res->featured_image}}"
+                                                     class="img-responsive mb-2" width="100%"
+                                                     alt="--">
+
+                                            </div>
+                                        </a>
+
+
+                                        <!-- post-body end -->
+                                    </div>
+                                    <!-- post end-->
+                                </div>
+                            @endforeach
+
+                        </div> <!-- row end -->
+                    </div>
+                </div><!-- col end-->
+
+            </div>
+
+        </div>
+
+    </section>
+@endif
+
+
 
 @if(count($videos)>0)
 
@@ -890,7 +912,7 @@
 @endif
 
 <div class="container bg-grey" id="history" style="margin-bottom: 25px; margin-top: 25px; display: block">
-    <a href="#"> <img src="/images/footer_banner.jpg" width="100%"></a>
+    <a href="#"> <img src="/images/new.webp" width="100%" height="auto"></a>
 </div>
 
 <div class="copyright-area">
