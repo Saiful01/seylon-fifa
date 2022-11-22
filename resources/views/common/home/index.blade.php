@@ -190,6 +190,13 @@
             width: 120px;
 
         }
+        .active>.page-link, .page-link.active {
+            z-index: 3;
+            color: white !important;
+            background-color: #EB242B;
+            border-color: #ef0911 !important;
+
+        }
 
         @media (max-width: 480px) {
             .navbar-area img {
@@ -253,7 +260,7 @@
 
 </div>
 <section>
-    <img src="/images/slider.jpg" alt="image" width="100%">
+    <img src="/images/new_slider.png" alt="image" width="100%">
 
 </section>
 <section class="value-area ptb-100 bg-light" id="info">
@@ -295,14 +302,14 @@
                                 type="video/mp4">
                     </video>--}}
 
-                    <video  class="w-100" >
-                        <source src="/images/video.mp4" type="video/mp4" />
+                    <video controls class="w-100">
+                        <source src="/images/video.mp4" type="video/mp4"/>
                     </video>
 
-                   {{-- <div class="embed-responsive embed-responsive-21by9">
-                        <iframe class="embed-responsive-item" src="/images/video.mp4" width="100%"
-                                height="350px"></iframe>
-                    </div>--}}
+                    {{-- <div class="embed-responsive embed-responsive-21by9">
+                         <iframe class="embed-responsive-item" src="/images/video.mp4" width="100%"
+                                 height="350px"></iframe>
+                     </div>--}}
 
                 </div>
             </div>
@@ -454,130 +461,245 @@
                 </h2>
                 <div class="elementor-widget-container">
                     <div class="row ">
+                        @foreach($submit_data as $res)
 
-                        <div class="col-lg-4 fadeInUp mt-3 wow fadeInUp" data-wow-duration="1.5s"
-                             data-wow-delay="300ms" ng-repeat="item in data_list">
-                            <div class="card p-1">
-                                <div class="post-header mx-auto">
-                                    <div class="mb-2" ng-if="item.selfie.indexOf('png') !== -1">
-                                        <img src="@{{ item.selfie }}" width="100%"
-                                             height="350px">
-                                    </div>
-                                    <div class="mb-2" ng-if="item.selfie.indexOf('jpg') !== -1">
-                                        <img src="@{{ item.selfie }}" width="100%"
-                                             height="350px">
-                                    </div>
-                                    <div class="mb-2" ng-if="item.selfie.indexOf('jpeg') !== -1">
-                                        <img src="@{{ item.selfie }}" width="100%"
-                                             height="350px">
-                                    </div>
-                                    <div class="embed-responsive embed-responsive-21by9"
-                                         ng-if="item.selfie.indexOf('mp4') !== -1">
-                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
-                                                height="350px"></iframe>
-                                    </div>
-                                    <div class="embed-responsive embed-responsive-21by9"
-                                         ng-if="item.selfie.indexOf('MOV') !== -1">
-                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
-                                                height="350px"></iframe>
-                                    </div>
-                                    <div class="embed-responsive embed-responsive-21by9"
-                                         ng-if="item.selfie.indexOf('MKV') !== -1">
-                                        <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
-                                                height="350px"></iframe>
-                                    </div>
+                            <div class="col-lg-4 fadeInUp mt-3 wow fadeInUp" data-wow-duration="1.5s"
+                                 data-wow-delay="300ms">
+                                <div class="card p-1">
+                                    <div class="post-header mx-auto">
+                                        @if(strstr($res->selfie, "mp4"))
+                                            <div class="embed-responsive embed-responsive-21by9">
+                                                <iframe class="embed-responsive-item" src="{{$res->selfie}}"
+                                                        width="100%" height="300px"
+                                                ></iframe>
+                                            </div>
+                                        @elseif(strstr($res->selfie, "png"))
+                                            <img src="{{$res->selfie}}" width="100%" height="300px"/>
+                                        @elseif(strstr($res->selfie, "jpg"))
+                                            <img src="{{$res->selfie}}" width="100%" height="300px"/>
 
+                                        @elseif(strstr($res->selfie, "webp"))
+                                            <img src="{{$res->selfie}}" width="100%" height="300px"/>
+                                        @endif
 
-                                </div>
-                                {{-- <div class="post-body mx-auto">
-                                     <div class="post-meta">
-                                         <div class="row">
-                                             <div class="col-md-8 col-8">
-                                                 <!-- Button to Open the Modal -->
-                                                 <button class="default-btn btn-vote"
-                                                         data-bs-toggle="modal"
-                                                         data-bs-target="#myModal@{{ item.id }}">
-                                                     ভোট দিন
-                                                 </button>
+                                    </div>
+                                    {{-- <div class="post-body mx-auto">
+                                         <div class="post-meta">
+                                             <div class="row">
+                                                 <div class="col-md-8 col-8">
+                                                     <!-- Button to Open the Modal -->
+                                                     <button class="default-btn btn-vote"
+                                                             data-bs-toggle="modal"
+                                                             data-bs-target="#myModal@{{ item.id }}">
+                                                         ভোট দিন
+                                                     </button>
 
-                                                 <!-- The Modal -->
-                                                 <div class="modal" id="myModal@{{ item.id }}">
-                                                     <div class="modal-dialog">
-                                                         <div class="modal-content">
+                                                     <!-- The Modal -->
+                                                     <div class="modal" id="myModal@{{ item.id }}">
+                                                         <div class="modal-dialog">
+                                                             <div class="modal-content">
 
-                                                             <!-- Modal body -->
-                                                             <div class="modal-body">
-                                                                 <div class="row">
-                                                                     --}}{{--  <div class="col-lg-6">
-                                                                           <div class="quote-image"></div>
-                                                                       </div>--}}{{--
-                                                                     <div class="col-lg-12 mx-auto">
-                                                                         <div class="quote-item">
-                                                                             <div class="content">
+                                                                 <!-- Modal body -->
+                                                                 <div class="modal-body">
+                                                                     <div class="row">
+                                                                         --}}{{--  <div class="col-lg-6">
+                                                                               <div class="quote-image"></div>
+                                                                           </div>--}}{{--
+                                                                         <div class="col-lg-12 mx-auto">
+                                                                             <div class="quote-item">
+                                                                                 <div class="content">
 
-                                                                                 <h3>আপনার ভোট দিন ।</h3>
+                                                                                     <h3>আপনার ভোট দিন ।</h3>
+                                                                                 </div>
+                                                                                 <form action="/vote" method="post">
+                                                                                     @csrf
+
+                                                                                     <input type="hidden"
+                                                                                            name="selfie_id"
+                                                                                            ng-value="@{{ item.id }}">
+                                                                                     <div class="form-group">
+                                                                                         <input type="text"
+                                                                                                class="form-control"
+                                                                                                name="name"
+                                                                                                placeholder="নাম" required>
+                                                                                     </div>
+
+                                                                                     <div class="form-group">
+                                                                                         <input type="text"
+                                                                                                class="form-control"
+                                                                                                name="phone"
+                                                                                                placeholder="মুঠোফোন নম্বর"
+                                                                                                required>
+                                                                                     </div>
+
+                                                                                     <button type="submit"
+                                                                                             class="default-btn">
+                                                                                         পাঠিয়ে দিন
+                                                                                     </button>
+                                                                                 </form>
+
                                                                              </div>
-                                                                             <form action="/vote" method="post">
-                                                                                 @csrf
-
-                                                                                 <input type="hidden"
-                                                                                        name="selfie_id"
-                                                                                        ng-value="@{{ item.id }}">
-                                                                                 <div class="form-group">
-                                                                                     <input type="text"
-                                                                                            class="form-control"
-                                                                                            name="name"
-                                                                                            placeholder="নাম" required>
-                                                                                 </div>
-
-                                                                                 <div class="form-group">
-                                                                                     <input type="text"
-                                                                                            class="form-control"
-                                                                                            name="phone"
-                                                                                            placeholder="মুঠোফোন নম্বর"
-                                                                                            required>
-                                                                                 </div>
-
-                                                                                 <button type="submit"
-                                                                                         class="default-btn">
-                                                                                     পাঠিয়ে দিন
-                                                                                 </button>
-                                                                             </form>
-
                                                                          </div>
                                                                      </div>
                                                                  </div>
-                                                             </div>
 
-                                                             <!-- Modal footer -->
-                                                             <div class="modal-footer">
-                                                                 <button type="button" class="btn btn-danger"
-                                                                         data-bs-dismiss="modal">Close
-                                                                 </button>
-                                                             </div>
+                                                                 <!-- Modal footer -->
+                                                                 <div class="modal-footer">
+                                                                     <button type="button" class="btn btn-danger"
+                                                                             data-bs-dismiss="modal">Close
+                                                                     </button>
+                                                                 </div>
 
+                                                             </div>
                                                          </div>
                                                      </div>
                                                  </div>
-                                             </div>
 
-                                             <div class="col-md-4 col-4">
-                                                 <span class="badge bg-danger btn-vote-count text-white">ভোট : @{{ item.votes }}</span>
+                                                 <div class="col-md-4 col-4">
+                                                     <span class="badge bg-danger btn-vote-count text-white">ভোট : @{{ item.votes }}</span>
+                                                 </div>
+
+
                                              </div>
 
 
                                          </div>
 
-
+                                     </div>--}}
+                                    <!-- post-body end -->
+                                </div>
+                            </div>
+                        @endforeach
+                        {{-- <div class="col-lg-4 fadeInUp mt-3 wow fadeInUp" data-wow-duration="1.5s"
+                              data-wow-delay="300ms" ng-repeat="item in data_list">
+                             <div class="card p-1">
+                                 <div class="post-header mx-auto">
+                                     <div class="mb-2" ng-if="item.selfie.indexOf('png') !== -1">
+                                         <img src="@{{ item.selfie }}" width="100%"
+                                              height="350px">
+                                     </div>
+                                     <div class="mb-2" ng-if="item.selfie.indexOf('jpg') !== -1">
+                                         <img src="@{{ item.selfie }}" width="100%"
+                                              height="350px">
+                                     </div>
+                                     <div class="mb-2" ng-if="item.selfie.indexOf('jpeg') !== -1">
+                                         <img src="@{{ item.selfie }}" width="100%"
+                                              height="350px">
+                                     </div>
+                                     <div class="embed-responsive embed-responsive-21by9"
+                                          ng-if="item.selfie.indexOf('mp4') !== -1">
+                                         <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
+                                                 height="350px"></iframe>
+                                     </div>
+                                     <div class="embed-responsive embed-responsive-21by9"
+                                          ng-if="item.selfie.indexOf('MOV') !== -1">
+                                         <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
+                                                 height="350px"></iframe>
+                                     </div>
+                                     <div class="embed-responsive embed-responsive-21by9"
+                                          ng-if="item.selfie.indexOf('MKV') !== -1">
+                                         <iframe class="embed-responsive-item" ng-src="@{{ item.selfie }}" width="100%"
+                                                 height="350px"></iframe>
                                      </div>
 
-                                 </div>--}}
-                                <!-- post-body end -->
-                            </div>
-                        </div>
+
+                                 </div>
+                                 --}}{{-- <div class="post-body mx-auto">
+                                      <div class="post-meta">
+                                          <div class="row">
+                                              <div class="col-md-8 col-8">
+                                                  <!-- Button to Open the Modal -->
+                                                  <button class="default-btn btn-vote"
+                                                          data-bs-toggle="modal"
+                                                          data-bs-target="#myModal@{{ item.id }}">
+                                                      ভোট দিন
+                                                  </button>
+
+                                                  <!-- The Modal -->
+                                                  <div class="modal" id="myModal@{{ item.id }}">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content">
+
+                                                              <!-- Modal body -->
+                                                              <div class="modal-body">
+                                                                  <div class="row">
+                                                                      --}}{{----}}{{--  <div class="col-lg-6">
+                                                                            <div class="quote-image"></div>
+                                                                        </div>--}}{{----}}{{--
+                                                                      <div class="col-lg-12 mx-auto">
+                                                                          <div class="quote-item">
+                                                                              <div class="content">
+
+                                                                                  <h3>আপনার ভোট দিন ।</h3>
+                                                                              </div>
+                                                                              <form action="/vote" method="post">
+                                                                                  @csrf
+
+                                                                                  <input type="hidden"
+                                                                                         name="selfie_id"
+                                                                                         ng-value="@{{ item.id }}">
+                                                                                  <div class="form-group">
+                                                                                      <input type="text"
+                                                                                             class="form-control"
+                                                                                             name="name"
+                                                                                             placeholder="নাম" required>
+                                                                                  </div>
+
+                                                                                  <div class="form-group">
+                                                                                      <input type="text"
+                                                                                             class="form-control"
+                                                                                             name="phone"
+                                                                                             placeholder="মুঠোফোন নম্বর"
+                                                                                             required>
+                                                                                  </div>
+
+                                                                                  <button type="submit"
+                                                                                          class="default-btn">
+                                                                                      পাঠিয়ে দিন
+                                                                                  </button>
+                                                                              </form>
+
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+
+                                                              <!-- Modal footer -->
+                                                              <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-danger"
+                                                                          data-bs-dismiss="modal">Close
+                                                                  </button>
+                                                              </div>
+
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="col-md-4 col-4">
+                                                  <span class="badge bg-danger btn-vote-count text-white">ভোট : @{{ item.votes }}</span>
+                                              </div>
+
+
+                                          </div>
+
+
+                                      </div>
+
+                                  </div>--}}{{--
+                                 <!-- post-body end -->
+                             </div>
+                         </div>--}}
+
 
 
                     </div> <!-- row end -->
+                    <div class="row mt-2 ">
+                        <div class="col-md-6 mx-auto">
+                            {{ $submit_data->appends(Request::except('page'))->links("pagination::bootstrap-4") }}
+                        </div>
+
+                    </div>
 
                 </div>
             </div><!-- col end-->

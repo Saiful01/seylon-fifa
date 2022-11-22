@@ -46,7 +46,7 @@ class Controller extends BaseController
         $news = News::orderBy('created_at', "ASC")->get();
         $photos = Photos::inRandomOrder()->get()->except(1);
 
-        $submit_data = SelfieSubmission::where('is_publish', true)->OrderBy('created_at', "DESC")->get();
+        $submit_data = SelfieSubmission::where('is_publish', true)->OrderBy('created_at', "DESC")->paginate(9);
         return view('common.home.index')
             ->with('sliders', $sliders)
             ->with('videos', $videos)

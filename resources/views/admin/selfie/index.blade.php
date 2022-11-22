@@ -93,6 +93,7 @@
                             <th> Name</th>
                             {{--  <th>Category</th>--}}
                             <th>Phone</th>
+                            <th>Email</th>
                             <th>Vote Count</th>
                             <th>Is Published</th>
                             <th>Action</th>
@@ -112,6 +113,7 @@
                                 <td>{{$res->name}}</td>
                                 {{-- <td>{{$res->category}}</td>--}}
                                 <td>{{$res->phone}}</td>
+                                <td>{{$res->email}}</td>
                                 <td>{{$res->vote_count}}</td>
                                 <td>
 
